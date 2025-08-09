@@ -156,4 +156,19 @@
     opacity: 1;
     transform: scale(1);
   }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .fade-in-left,
+    .fade-in-right {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .fade-in-left.visible,
+    .fade-in-right.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }

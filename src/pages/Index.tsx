@@ -32,57 +32,60 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white text-black font-sans">
       {/* Navigation */}
-      <nav className="border-b border-gray-200 px-6 py-4">
+      <nav className="border-b border-gray-200 px-4 sm:px-6 py-4">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <h1 className="text-2xl font-bold">BIOGRAPHY</h1>
-          <div className="flex gap-8">
+          <h1 className="text-xl sm:text-2xl font-bold">BIOGRAPHY</h1>
+          <div className="hidden md:flex gap-8">
             <a href="#home" className="hover:text-gray-600 transition-colors">Home</a>
             <a href="#about" className="hover:text-gray-600 transition-colors">About</a>
             <a href="#works" className="hover:text-gray-600 transition-colors">Works</a>
             <a href="#contact" className="hover:text-gray-600 transition-colors">Contact</a>
           </div>
+          <button className="md:hidden p-2">
+            <Icon name="Menu" size={24} />
+          </button>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="px-6 py-20">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div className="fade-in-left">
-            <h2 className="text-5xl font-bold leading-tight mb-6">
+      <section id="home" className="px-4 sm:px-6 py-12 sm:py-20">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+          <div className="fade-in-left text-center md:text-left">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
               Алексей Криптов
               <br />
               <span className="text-gray-600">Crypto Trader</span>
             </h2>
-            <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-700 mb-8 leading-relaxed">
               Профессиональный криптотрейдер с 7-летним опытом работы на рынке цифровых активов. 
               Специализируюсь на техническом анализе и алгоритмической торговле.
             </p>
-            <div className="flex gap-4">
-              <Button className="bg-black text-white hover:bg-gray-800">
+            <div className="flex flex-col sm:flex-row gap-4 items-center">
+              <Button className="bg-black text-white hover:bg-gray-800 w-full sm:w-auto">
                 СВЯЗАТЬСЯ
               </Button>
-              <Button variant="outline" className="border-black text-black hover:bg-black hover:text-white">
+              <Button variant="outline" className="border-black text-black hover:bg-black hover:text-white w-full sm:w-auto">
                 МОИ РАБОТЫ
               </Button>
             </div>
           </div>
-          <div className="flex justify-center fade-in-right">
+          <div className="flex justify-center fade-in-right order-first md:order-last">
             <img 
               src="/img/e9779dd6-8022-42f1-9c1e-24d15d20df3a.jpg" 
               alt="Алексей Криптов"
-              className="w-80 h-80 object-cover rounded-lg shadow-2xl"
+              className="w-64 h-64 sm:w-80 sm:h-80 object-cover rounded-lg shadow-2xl"
             />
           </div>
         </div>
       </section>
 
       {/* Biography Section */}
-      <section id="about" className="bg-gray-50 px-6 py-20">
+      <section id="about" className="bg-gray-50 px-4 sm:px-6 py-12 sm:py-20">
         <div className="max-w-6xl mx-auto">
-          <h3 className="text-4xl font-bold mb-12 text-center fade-in-up">Биография</h3>
-          <div className="grid md:grid-cols-2 gap-16">
+          <h3 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center fade-in-up">Биография</h3>
+          <div className="grid md:grid-cols-2 gap-8 md:gap-16">
             <div className="fade-in-left">
-              <h4 className="text-2xl font-bold mb-6">Опыт и достижения</h4>
+              <h4 className="text-xl sm:text-2xl font-bold mb-6">Опыт и достижения</h4>
               <div className="space-y-6">
                 <Card className="p-6">
                   <div className="flex items-center gap-4 mb-4">
@@ -114,7 +117,7 @@ const Index = () => {
             </div>
             
             <div className="fade-in-right">
-              <h4 className="text-2xl font-bold mb-6">Навыки</h4>
+              <h4 className="text-xl sm:text-2xl font-bold mb-6">Навыки</h4>
               <div className="space-y-4">
                 <div>
                   <div className="flex justify-between mb-2">
@@ -174,10 +177,10 @@ const Index = () => {
       </section>
 
       {/* Works Gallery */}
-      <section id="works" className="px-6 py-20">
+      <section id="works" className="px-4 sm:px-6 py-12 sm:py-20">
         <div className="max-w-6xl mx-auto">
-          <h3 className="text-4xl font-bold mb-12 text-center fade-in-up">Портфолио</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <h3 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center fade-in-up">Портфолио</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <img 
                 src="/img/081ecef1-069a-4683-82f0-15ecc69500af.jpg" 
@@ -223,9 +226,9 @@ const Index = () => {
       </section>
 
       {/* Publications */}
-      <section className="bg-gray-50 px-6 py-20">
+      <section className="bg-gray-50 px-4 sm:px-6 py-12 sm:py-20">
         <div className="max-w-4xl mx-auto">
-          <h3 className="text-4xl font-bold mb-12 text-center fade-in-up">Публикации</h3>
+          <h3 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center fade-in-up">Публикации</h3>
           <div className="space-y-8">
             <Card className="p-8">
               <div className="flex items-start justify-between mb-4">
@@ -242,9 +245,9 @@ const Index = () => {
               </div>
             </Card>
 
-            <Card className="p-8 fade-in-up">
-              <h5 className="font-bold text-xl mb-2">Как я заработал 500% на altcoin сезоне</h5>
-              <p className="text-gray-600 mb-4">История успешных инвестиций в альтернативные криптовалюты</p>
+            <Card className="p-4 sm:p-8 fade-in-up">
+              <h5 className="font-bold text-lg sm:text-xl mb-2">Как я заработал 500% на altcoin сезоне</h5>
+              <p className="text-gray-600 mb-4 text-sm sm:text-base">История успешных инвестиций в альтернативные криптовалюты</p>
               <div className="flex items-center gap-4 text-sm text-gray-500">
                 <span>3 декабря 2023</span>
                 <span>•</span>
@@ -252,9 +255,9 @@ const Index = () => {
               </div>
             </Card>
 
-            <Card className="p-8 fade-in-up">
-              <h5 className="font-bold text-xl mb-2">Психология трейдинга: Работа с эмоциями</h5>
-              <p className="text-gray-600 mb-4">Практические советы по ментальной подготовке трейдера</p>
+            <Card className="p-4 sm:p-8 fade-in-up">
+              <h5 className="font-bold text-lg sm:text-xl mb-2">Психология трейдинга: Работа с эмоциями</h5>
+              <p className="text-gray-600 mb-4 text-sm sm:text-base">Практические советы по ментальной подготовке трейдера</p>
               <div className="flex items-center gap-4 text-sm text-gray-500">
                 <span>20 октября 2023</span>
                 <span>•</span>
@@ -266,14 +269,14 @@ const Index = () => {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="px-6 py-20">
+      <section id="contact" className="px-4 sm:px-6 py-12 sm:py-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-4xl font-bold mb-8 fade-in-up">Контакты</h3>
-          <p className="text-xl text-gray-600 mb-12 fade-in-up">
+          <h3 className="text-3xl sm:text-4xl font-bold mb-8 fade-in-up">Контакты</h3>
+          <p className="text-lg sm:text-xl text-gray-600 mb-8 sm:mb-12 fade-in-up px-4">
             Готов обсудить инвестиционные возможности и поделиться опытом
           </p>
           
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid sm:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
             <div className="flex flex-col items-center">
               <Icon name="Mail" size={32} className="mb-4" />
               <h5 className="font-bold mb-2">Email</h5>
@@ -293,15 +296,15 @@ const Index = () => {
             </div>
           </div>
           
-          <Button size="lg" className="bg-black text-white hover:bg-gray-800 px-8 fade-in-up">
+          <Button size="lg" className="bg-black text-white hover:bg-gray-800 px-6 sm:px-8 fade-in-up w-full sm:w-auto">
             НАПИСАТЬ СООБЩЕНИЕ
           </Button>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-gray-200 px-6 py-8">
-        <div className="max-w-6xl mx-auto text-center text-gray-600">
+      <footer className="border-t border-gray-200 px-4 sm:px-6 py-6 sm:py-8">
+        <div className="max-w-6xl mx-auto text-center text-gray-600 text-sm sm:text-base">
           <p>&copy; 2024 Алексей Криптов. Все права защищены.</p>
         </div>
       </footer>
