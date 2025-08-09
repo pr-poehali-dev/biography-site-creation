@@ -51,15 +51,9 @@ const Index = () => {
       <section id="home" className="px-4 sm:px-6 py-12 sm:py-20">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-16 items-center">
           <div className="fade-in-left text-center md:text-left">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
-              Алексей Криптов
-              <br />
-              <span className="text-gray-600">Crypto Trader</span>
-            </h2>
-            <p className="text-base sm:text-lg text-gray-700 mb-8 leading-relaxed">
-              Профессиональный криптотрейдер с 7-летним опытом работы на рынке цифровых активов. 
-              Специализируюсь на техническом анализе и алгоритмической торговле.
-            </p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">Alexander Chechnev
+</h2>
+            <p className="text-base sm:text-lg text-gray-700 mb-8 leading-relaxed">(: шо?</p>
             <div className="flex flex-col sm:flex-row gap-4 items-center">
               <Button className="bg-black text-white hover:bg-gray-800 w-full sm:w-auto">
                 СВЯЗАТЬСЯ
