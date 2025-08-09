@@ -97,14 +97,7 @@ const Index = () => {
                   <p className="text-gray-600">Награда биржи Binance за показатели доходности.</p>
                 </Card>
 
-                <Card className="p-6">
-                  <div className="flex items-center gap-4 mb-4">
-                    <Icon name="BookOpen" size={24} />
-                    <span className="font-semibold">2019</span>
-                  </div>
-                  <h5 className="font-bold mb-2">Автор курса</h5>
-                  <p className="text-gray-600"></p>
-                </Card>
+
               </div>
             </div>
             
