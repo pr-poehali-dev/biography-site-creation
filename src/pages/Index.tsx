@@ -103,7 +103,7 @@ const Index = () => {
                     <span className="font-semibold">2019</span>
                   </div>
                   <h5 className="font-bold mb-2">Автор курса</h5>
-                  <p className="text-gray-600">"Технический анализ криптовалют" - 10,000+ студентов.</p>
+                  <p className="text-gray-600"></p>
                 </Card>
               </div>
             </div>
@@ -272,7 +272,7 @@ const Index = () => {
             <div className="flex flex-col items-center">
               <Icon name="Mail" size={32} className="mb-4" />
               <h5 className="font-bold mb-2">Email</h5>
-              <p className="text-gray-600">aleksey@cryptotrader.ru</p>
+              <p className="text-gray-600">ctchechnev@yandex.ru</p>
             </div>
             
             <div className="flex flex-col items-center scale-in">
