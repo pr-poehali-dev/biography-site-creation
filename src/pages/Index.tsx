@@ -58,9 +58,7 @@ const Index = () => {
               <Button className="bg-black text-white hover:bg-gray-800 w-full sm:w-auto">
                 СВЯЗАТЬСЯ
               </Button>
-              <Button variant="outline" className="border-black text-black hover:bg-black hover:text-white w-full sm:w-auto">
-                МОИ РАБОТЫ
-              </Button>
+              <Button variant="outline" className="border-black text-black hover:bg-black hover:text-white w-full sm:w-auto"></Button>
             </div>
           </div>
           <div className="flex justify-center fade-in-right order-first md:order-last">
