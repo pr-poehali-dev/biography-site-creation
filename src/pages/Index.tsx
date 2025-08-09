@@ -34,7 +34,7 @@ const Index = () => {
       {/* Navigation */}
       <nav className="border-b border-gray-200 px-4 sm:px-6 py-4">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <h1 className="text-xl sm:text-2xl font-bold">BIOGRAPHY</h1>
+          <h1 className="text-xl sm:text-2xl font-bold">MY BIOGRAPHY </h1>
           <div className="hidden md:flex gap-8">
             <a href="#home" className="hover:text-gray-600 transition-colors">Home</a>
             <a href="#about" className="hover:text-gray-600 transition-colors">About</a>
