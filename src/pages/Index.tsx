@@ -2,8 +2,33 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
+import { useEffect, useRef } from "react";
 
 const Index = () => {
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '50px' }
+    );
+
+    const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right, .scale-in');
+    animatedElements.forEach((el) => {
+      observerRef.current?.observe(el);
+    });
+
+    return () => {
+      observerRef.current?.disconnect();
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-white text-black font-sans">
       {/* Navigation */}
@@ -22,7 +47,7 @@ const Index = () => {
       {/* Hero Section */}
       <section id="home" className="px-6 py-20">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-          <div>
+          <div className="fade-in-left">
             <h2 className="text-5xl font-bold leading-tight mb-6">
               Алексей Криптов
               <br />
@@ -41,7 +66,7 @@ const Index = () => {
               </Button>
             </div>
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center fade-in-right">
             <img 
               src="/img/e9779dd6-8022-42f1-9c1e-24d15d20df3a.jpg" 
               alt="Алексей Криптов"
@@ -54,9 +79,9 @@ const Index = () => {
       {/* Biography Section */}
       <section id="about" className="bg-gray-50 px-6 py-20">
         <div className="max-w-6xl mx-auto">
-          <h3 className="text-4xl font-bold mb-12 text-center">Биография</h3>
+          <h3 className="text-4xl font-bold mb-12 text-center fade-in-up">Биография</h3>
           <div className="grid md:grid-cols-2 gap-16">
-            <div>
+            <div className="fade-in-left">
               <h4 className="text-2xl font-bold mb-6">Опыт и достижения</h4>
               <div className="space-y-6">
                 <Card className="p-6">
@@ -88,7 +113,7 @@ const Index = () => {
               </div>
             </div>
             
-            <div>
+            <div className="fade-in-right">
               <h4 className="text-2xl font-bold mb-6">Навыки</h4>
               <div className="space-y-4">
                 <div>
@@ -151,7 +176,7 @@ const Index = () => {
       {/* Works Gallery */}
       <section id="works" className="px-6 py-20">
         <div className="max-w-6xl mx-auto">
-          <h3 className="text-4xl font-bold mb-12 text-center">Портфолио</h3>
+          <h3 className="text-4xl font-bold mb-12 text-center fade-in-up">Портфолио</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="overflow-hidden hover:shadow-lg transition-shadow">
               <img 
@@ -168,7 +193,7 @@ const Index = () => {
               </div>
             </Card>
 
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow scale-in">
               <div className="w-full h-48 bg-gray-100 flex items-center justify-center">
                 <Icon name="BarChart3" size={48} className="text-gray-400" />
               </div>
@@ -181,7 +206,7 @@ const Index = () => {
               </div>
             </Card>
 
-            <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow scale-in">
               <div className="w-full h-48 bg-gray-100 flex items-center justify-center">
                 <Icon name="TrendingUp" size={48} className="text-gray-400" />
               </div>
@@ -200,7 +225,7 @@ const Index = () => {
       {/* Publications */}
       <section className="bg-gray-50 px-6 py-20">
         <div className="max-w-4xl mx-auto">
-          <h3 className="text-4xl font-bold mb-12 text-center">Публикации</h3>
+          <h3 className="text-4xl font-bold mb-12 text-center fade-in-up">Публикации</h3>
           <div className="space-y-8">
             <Card className="p-8">
               <div className="flex items-start justify-between mb-4">
@@ -217,7 +242,7 @@ const Index = () => {
               </div>
             </Card>
 
-            <Card className="p-8">
+            <Card className="p-8 fade-in-up">
               <h5 className="font-bold text-xl mb-2">Как я заработал 500% на altcoin сезоне</h5>
               <p className="text-gray-600 mb-4">История успешных инвестиций в альтернативные криптовалюты</p>
               <div className="flex items-center gap-4 text-sm text-gray-500">
@@ -227,7 +252,7 @@ const Index = () => {
               </div>
             </Card>
 
-            <Card className="p-8">
+            <Card className="p-8 fade-in-up">
               <h5 className="font-bold text-xl mb-2">Психология трейдинга: Работа с эмоциями</h5>
               <p className="text-gray-600 mb-4">Практические советы по ментальной подготовке трейдера</p>
               <div className="flex items-center gap-4 text-sm text-gray-500">
@@ -243,8 +268,8 @@ const Index = () => {
       {/* Contact */}
       <section id="contact" className="px-6 py-20">
         <div className="max-w-4xl mx-auto text-center">
-          <h3 className="text-4xl font-bold mb-8">Контакты</h3>
-          <p className="text-xl text-gray-600 mb-12">
+          <h3 className="text-4xl font-bold mb-8 fade-in-up">Контакты</h3>
+          <p className="text-xl text-gray-600 mb-12 fade-in-up">
             Готов обсудить инвестиционные возможности и поделиться опытом
           </p>
           
@@ -255,20 +280,20 @@ const Index = () => {
               <p className="text-gray-600">aleksey@cryptotrader.ru</p>
             </div>
             
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center scale-in">
               <Icon name="MessageSquare" size={32} className="mb-4" />
               <h5 className="font-bold mb-2">Telegram</h5>
               <p className="text-gray-600">@aleksey_crypto</p>
             </div>
             
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center scale-in">
               <Icon name="Twitter" size={32} className="mb-4" />
               <h5 className="font-bold mb-2">Twitter</h5>
               <p className="text-gray-600">@aleksey_trader</p>
             </div>
           </div>
           
-          <Button size="lg" className="bg-black text-white hover:bg-gray-800 px-8">
+          <Button size="lg" className="bg-black text-white hover:bg-gray-800 px-8 fade-in-up">
             НАПИСАТЬ СООБЩЕНИЕ
           </Button>
         </div>
