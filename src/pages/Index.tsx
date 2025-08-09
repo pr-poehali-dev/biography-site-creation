@@ -278,7 +278,7 @@ const Index = () => {
             <div className="flex flex-col items-center scale-in">
               <Icon name="MessageSquare" size={32} className="mb-4" />
               <h5 className="font-bold mb-2">Telegram</h5>
-              <p className="text-gray-600">@aleksey_crypto</p>
+              <p className="text-gray-600">@spoof52</p>
             </div>
             
             <div className="flex flex-col items-center scale-in">
